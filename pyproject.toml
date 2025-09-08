@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "logsentinel"
+version = "0.1.0"
+description = "Tiny opt-in runtime/debug logger with simple wrapper functions."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Your Name", email = "you@example.com" }]
+keywords = ["logging", "debug", "runtime", "utility"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.urls]
+Homepage = "https://example.com"
+Repository = "https://example.com/repo"
+
+# Tell Hatchling where your package lives (src-layout)
+[tool.hatch.build.targets.wheel]
+packages = ["src/logsentinel"]
+
+# Ensure the sdist actually contains your package + metadata files
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/logsentinel/**",
+  "pyproject.toml",
+  "README.md",
+  "LICENSE",
+]
